@@ -1,0 +1,68 @@
+﻿@model HelloWorldWebApplication.Models.HelloPhrasesModel
+
+@{
+    ViewBag.Title = "HelloWorld";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.DefaultPhrase</h2>
+
+<hr />
+
+<p>Here is a list of <b>"Hello World!"</b> phrases for each supported language:</p>
+
+@{
+    if (Model.Phrases.Count == 0)
+    {
+        <b>No phrases available. Add one below.</b>
+    }
+    else
+    {
+        foreach (var phrase in Model.Phrases)
+        {
+            string phraseString = string.Format("{0}:  {1}", phrase.Key, phrase.Value);
+
+            if (Model.DefaultLanguage == phrase.Key)
+            {
+                <li><b>@phraseString</b></li>
+            }
+            else
+            {
+                <li>@phraseString</li>
+            }
+        }
+    }
+}
+
+<hr />
+
+<p>Don't see a phrase for your favorite language? Add one here!</p>
+
+<form>
+    <label>Language: *<br /> @Html.TextBoxFor(m => m.LanguageToAdd)</label>
+    <label>Phrase: *<br /> @Html.TextBoxFor(m => m.PhraseToAdd)</label>
+    <br /><br />
+    <input name="submit" type="submit" value="Add Phrase" />
+    <br/></br>
+    <label>@Model.StatusMessage</label>
+</form>
+
+<form>
+    @{
+        if (Model.Phrases.Count != 0)
+        {
+            <hr/>
+
+            <p>Select a phrase then click 'Set As Default' to set the default language or click 'Delete Phrase' to delete the phrase for the specified language.</p>
+
+            @Html.DropDownListFor(m => m.LanguageToDelete, Model.PhrasesList)
+
+            <br/><br/>
+            <input name="submit" type="submit" value="Set As Default"/>
+            <input name="submit" type="submit" value="Delete Phrase"/>
+        }
+    }
+
+
+</form>
+
