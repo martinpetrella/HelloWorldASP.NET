@@ -1,12 +1,12 @@
 ﻿using System.Web.Mvc;
 using HelloWorldWebApplication.Models;
 
-namespace HelloWorldWebApplication.Controllers
+namespace HelloWorldWebApplication.Controllers.View
 {
     /// <summary>
     /// The HelloWorld view controller
     /// </summary>
-    public class HelloWorldViewController : Controller
+    public class HelloWorldController : Controller
     {
         /// <summary>
         /// The HelloWorld view
@@ -14,7 +14,7 @@ namespace HelloWorldWebApplication.Controllers
         /// <param name="submit">Submit button text</param>
         /// <param name="helloPhrasesModel">HelloPhrasesModel</param>
         /// <returns></returns>
-        public ActionResult HelloWorldView(string submit, HelloPhrasesModel helloPhrasesModel)
+        public ActionResult HelloWorld(string submit, HelloPhrasesModel helloPhrasesModel)
         {
             if (submit == "Add Phrase")
             {

@@ -503,57 +503,57 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
-        <member name="T:HelloWorldWebApplication.Controllers.HelloWorldController">
+        <member name="T:HelloWorldWebApplication.Controllers.Api.HelloWorldController">
             <summary>
             HelloWorld - Display "Hello World!" phrases for various languages. Phrases can be added and deleted.
             </summary>
         </member>
-        <member name="M:HelloWorldWebApplication.Controllers.HelloWorldController.Index">
+        <member name="M:HelloWorldWebApplication.Controllers.Api.HelloWorldController.Index">
             <summary>
             Get phrase for default language
             </summary>
             <returns>Phrase in default language</returns>
         </member>
-        <member name="M:HelloWorldWebApplication.Controllers.HelloWorldController.SetDefaultLanguage(HelloWorldWebApplication.Models.HelloPhraseModel)">
+        <member name="M:HelloWorldWebApplication.Controllers.Api.HelloWorldController.SetDefaultLanguage(HelloWorldWebApplication.Models.HelloPhraseModel)">
             <summary>
             Set default language
             </summary>
             <param name="phraseInfo">The default language</param>
             <returns>HttpResponseMessage</returns>
         </member>
-        <member name="M:HelloWorldWebApplication.Controllers.HelloWorldController.Phrases">
+        <member name="M:HelloWorldWebApplication.Controllers.Api.HelloWorldController.Phrases">
             <summary>
             Get phrase for each supported language
             </summary>
             <returns>Dictionary containing phrases for various languages</returns>
         </member>
-        <member name="M:HelloWorldWebApplication.Controllers.HelloWorldController.GetPhrase(System.String)">
+        <member name="M:HelloWorldWebApplication.Controllers.Api.HelloWorldController.GetPhrase(System.String)">
             <summary>
             Get phrase for specified language
             </summary>
             <param name="language">The language</param>
             <returns>Phrase in the specified language</returns>
         </member>
-        <member name="M:HelloWorldWebApplication.Controllers.HelloWorldController.AddPhrase(HelloWorldWebApplication.Models.HelloPhraseModel)">
+        <member name="M:HelloWorldWebApplication.Controllers.Api.HelloWorldController.AddPhrase(HelloWorldWebApplication.Models.HelloPhraseModel)">
             <summary>
             Add phrase for specified language
             </summary>
             <param name="phraseInfo">The phrase to add for a specified language</param>
             <returns>HttpResponseMessage</returns>
         </member>
-        <member name="M:HelloWorldWebApplication.Controllers.HelloWorldController.DeletePhrase(System.String)">
+        <member name="M:HelloWorldWebApplication.Controllers.Api.HelloWorldController.DeletePhrase(System.String)">
             <summary>
             Delete phrase for specified language
             </summary>
             <param name="language">The language of the phrase to delete</param>
             <returns>HttpResponseMessage</returns>
         </member>
-        <member name="T:HelloWorldWebApplication.Controllers.HelloWorldViewController">
+        <member name="T:HelloWorldWebApplication.Controllers.View.HelloWorldController">
             <summary>
             The HelloWorld view controller
             </summary>
         </member>
-        <member name="M:HelloWorldWebApplication.Controllers.HelloWorldViewController.HelloWorldView(System.String,HelloWorldWebApplication.Models.HelloPhrasesModel)">
+        <member name="M:HelloWorldWebApplication.Controllers.View.HelloWorldController.HelloWorld(System.String,HelloWorldWebApplication.Models.HelloPhrasesModel)">
             <summary>
             The HelloWorld view
             </summary>
